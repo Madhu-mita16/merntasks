@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form>
+            <p>Type the name in the below textbox</p>
+            <input type="text" id="t1">
+            <button type="button" onclick="addarray()">Submit</button>
+            <button type="button" onclick="cleararray()">Reset/Clear Array</button>
+        </form>
+    </center>
+</body>
+<script>
+    let emptyarray = [];
+    function addarray() {
+
+        let txt = document.getElementById("t1").value;
+        emptyarray.push(txt);
+        console.log(emptyarray);
+        document.getElementById('t1').value=' ';
+    }
+    function cleararray(){
+        return emptyarray = []
+    }
+     </script>
+</html>
