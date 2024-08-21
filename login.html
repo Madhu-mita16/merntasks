@@ -21,20 +21,43 @@
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
         </UL>
-        <form class="login">
+        <form class="login" id="logform">
             <div>
                 <h2>LOGIN</h2>
                 <p><h4>Email id</h4></p>
-                <input type="text" name="Email" id="">
+                <input type="text" name="Email" id="email">
                 <p><h4>Password</h4></p>
-                <input type= "password" name="password">
+                <input type= "password" name="password" id="password">
             </div>
             <p></p>
-            <button onClick={getUser}> Login </button>
+            <button onClick={getUser} type="submit"> Login </button>
         </form>
     </center>
 </body>
-<footer>
-    <p>&copy; All Rights Reserved</p>
-</footer>
+<script>
+    document.getElementById('logform').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting the traditional way
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        fetch('https://reqres.in/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Login Response:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>
 </html>

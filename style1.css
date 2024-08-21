@@ -131,3 +131,51 @@ img{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     background-color: black;
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+.fullbody{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.header{
+
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(243, 203, 103, 0.836);
+    
+}
+.navbar{
+    width: 800px;
+    display: flex;
+    text-decoration: none;
+    justify-content: space-around;
+    align-items: baseline;
+    
+}
+.navbar li{
+
+    margin: 0 50px;
+
+}
+.navbar a{
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+
+}
+a:hover{
+    color: goldenrod;
+    text-decoration: solid;
+}
+.midbar{
+    display: flex;
+    justify-content: space-between;
+}
